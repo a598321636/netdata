@@ -840,6 +840,7 @@ void *pluginsd_main(void *ptr) {
                 // it is not running
                 // allocate a new one, or use the obsolete one
                 if(unlikely(!cd)) {
+		    sleep(1);
                     cd = callocz(sizeof(struct plugind), 1);
 
                     snprintfz(cd->id, CONFIG_MAX_NAME, "plugin:%s", pluginname);
